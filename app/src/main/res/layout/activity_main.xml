@@ -10,39 +10,57 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="3">
+        android:layout_height="230dp"
+        android:background="@drawable/background">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/backFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentStart="true"
+            android:layout_margin="8dp"
+            android:src="@drawable/baseline_arrow_back_black"
+            app:fabSize="mini" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/viewFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            tools:ignore="RelativeOverlap"/>
+            android:layout_alignParentRight="true"
+            android:layout_margin="8dp"
+            android:src="@drawable/baseline_video_library_black"
+            app:backgroundTint="@android:color/background_light"
+            app:fabSize="mini"
+            tools:ignore="RelativeOverlap" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:id="@+id/textTitle"
             android:text="@string/movies"
-            />
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_above="@+id/textSubtitle"/>
+
+        <TextView
+            android:id="@+id/textSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="14dp"
+            android:text="@string/make_you_an_offer_you_can_t_refuse"
+            android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
         android:layout_margin="8dp">
 
         <LinearLayout
@@ -52,7 +70,7 @@
             android:background="@drawable/gradient_color"
             android:orientation="horizontal">
 
-            <android.support.v4.widget.CircleImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
@@ -83,20 +101,22 @@
             </LinearLayout>
 
             <android.support.design.widget.FloatingActionButton
+                android:id="@+id/nextFAB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="@drawable/baseline_arrow_forward_black"
+                app:fabSize="mini" />
 
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -110,15 +130,14 @@
             android:id="@+id/recyclerViewOne"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:scrollbars="horizontal"/>
+            android:scrollbars="none"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="2">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -132,7 +151,7 @@
             android:id="@+id/recyclerViewTwo"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:scrollbars="horizontal"/>
+            android:scrollbars="none"/>
 
     </LinearLayout>
 
